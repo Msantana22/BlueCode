@@ -1,0 +1,729 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Montserrat', sans-serif;
+  color: white;
+}
+
+body {
+  background-color: #02060e;
+}
+
+#t-body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  top: 35px;
+}
+
+/* Para Chrome, Safari, Edge e Opera */
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+/* Para Firefox */
+input[type=number] {
+    -moz-appearance: textfield;
+}
+
+#dvTittleAlmoxarifado{
+  display: flex;
+  justify-content: center;
+}
+
+#tittle-almoxarifado{
+  font-weight: 900;
+  font-size: 26px;
+  word-break: break-all;
+}
+
+#dv-ddlTipoPesquisa select{
+  height: 35px;
+  color: white;
+  background-color: black;
+  font-weight: 600;
+  font-size: inherit;
+  padding: 6px;
+  border-radius: 15px;
+}
+
+#dv-descricao-pesquisa{
+  display: flex;
+}
+
+#dv-descricao{
+  margin-top: 14px;
+}
+
+#m-pesquisar{
+  outline: none;
+  padding: 5px 10px;
+  width: 100%;
+  margin-bottom: 20px;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  background-color: #040414;
+  font-size: 16px;
+}
+
+.hidden {
+  display: none;
+  overflow: hidden;
+  /* transform: translateX(0); */
+}
+
+.show {
+  display: flex;
+  /* transform: translateX(30%); */
+  transition: opacity 1.5s ease, transform 1.5s ease;
+}
+
+#dv-descricao input{
+  outline: none;
+  margin-bottom: 20px;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  height: 30px;
+  margin-top: 6px;
+  width: 500px;
+  background-color: transparent;
+  font-weight: 600;
+  font-size: 16px;
+  padding-left: 5px;
+}
+
+#dv-descricao-lupa img{
+  width: 35px;
+  margin-left: 7px;
+}
+
+.dv-data-inputs{
+  display: flex;
+  flex-direction: column;
+  margin-left: 30px;
+}
+
+.m-data{
+  color: white;
+  padding: 5px;
+  border-radius: 10px;
+  font-size: inherit;
+  background-color: transparent;
+  border: 1px solid #ffffff3b;
+}
+
+input[type="date"]::-webkit-calendar-picker-indicator {
+  cursor: pointer;
+  filter: invert(1);
+}
+
+.labeldata{
+  font-size: inherit;
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+
+#containerImg{
+  margin: 20px 0px 0px 18px;
+  display: flex;
+  width: 0%;
+}
+
+#containerImg img{
+  width: 45px;
+  height: 45px;
+  cursor: pointer;
+}
+
+#containerImg img:hover{
+  transform: scale(1.1);
+}
+
+#containerImgExit{
+  margin: 16px 0px 0px 12px;
+}
+
+#containerImgExit span{
+  visibility: collapse;
+  color: white;
+  font-size: 17px;
+  opacity: 0;
+  transition: opacity 1s;
+}
+
+#containerImg:hover #containerImgExit span{
+  visibility: visible;
+  opacity: 1;
+}
+
+.container {
+  width: 90%;
+  border-radius: 10px;
+  background: transparent;
+  border: 1px solid white;
+  padding-bottom: 15px;
+}
+
+.header {
+  min-height: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: auto 12px;
+  margin-top: 10px;
+  overflow: hidden;
+}
+
+#gerarPdf {
+  font-size: 18px;
+  padding: 10px;
+  border-radius: 5px;
+  border: none;
+  color: white;
+  background-color: #12abc3eb;
+  margin-right: 8px;
+  cursor: pointer;
+  transition: 1s;
+}
+
+#gerarPdf:hover {
+  transition: 0.8s;
+  background-color: #d7dbe3;
+  color: black;
+  transition: 1s;
+}
+
+#incluir {
+  font-size: 18px;
+  padding: 10px;
+  border-radius: 5px;
+  border: none;
+  color: white;
+  background-color: #1b913e;
+  cursor: pointer;
+  transition: 1s;
+}
+
+#incluir:hover {
+  transition: 0.8s;
+  background-color: #d7dbe3;
+  color: black;
+  transition: 1s;
+}
+
+#btnPesquisar {
+  font-size: 18px;
+  padding: 6px;
+  border-radius: 5px;
+  border: none;
+  color: white;
+  background-color: #430791;
+  cursor: pointer;
+  margin-left: 25px;
+  height: 40px;
+  margin-top: 15px;
+  transition: 1s;
+}
+
+#btnPesquisar:hover {
+  transition: 0.8s;
+  background-color: #d7dbe3;
+  color: black;
+  transition: 1s;
+}
+
+.divTable {
+    padding: 10px;
+    width: 100%; /* Usa toda a largura disponível do container */
+    overflow-x: auto; /* Permite rolagem horizontal */
+    overflow-y: auto; /* Permite rolagem vertical */
+    white-space: nowrap; /* Impede que o texto quebre para uma nova linha */
+    height: 650px;
+    margin-top: 15px;
+}
+
+table {
+    width: 100%;
+    border-spacing: 10px;
+    word-break: keep-all; /* Mantém palavras inteiras em uma linha */
+    border-collapse: collapse;
+    min-width: 800px; /* Largura mínima da tabela para evitar colapsos */
+}
+
+thead tr th {
+    padding: 5px;
+    text-align: start;
+    font-size: 19px;
+}
+
+tbody tr td {
+    vertical-align: text-top;
+    padding: 6px;
+    font-size: 19px;
+}
+
+/* Ajuste para rolagem personalizada */
+.divTable::-webkit-scrollbar {
+    width: 12px;
+    height: 12px; /* Altura para a barra de rolagem horizontal */
+    background-color: whitesmoke;
+}
+
+.divTable::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    background-color: #12abc3eb;
+}
+
+tr {
+  border-bottom: 1px solid rgb(57 54 54) !important;
+}
+
+thead tr td {
+  font-size: 21px;
+  font-weight: 600; 
+  padding: 5px;
+}
+
+tbody tr {
+  font-size: 19px;
+}
+
+thead tr th.acao {
+  width: 100px!important;
+  text-align: center;
+}
+
+tbody tr td.acao {
+  text-align: center;
+}
+
+.icon-lista{
+  width: 26px;
+  cursor: pointer;
+}
+
+#icon-lista-label{
+  display: flex;
+  justify-content: space-around;
+}
+
+.icon-lista:hover{
+  transform: scale(1.1);
+}
+
+#dvNenhumRegistroEncontrado{
+  display: none;
+  justify-content: center;
+  flex-direction: column;
+  position: relative;
+  align-items: center;
+  left: 706px;
+  top: 115px;
+  width: 20%;
+}
+
+#imgNenhumRegistroEncontrado{
+  width: 200px;
+}
+
+#lbNenhumRegistroEncontrado{
+  font-size: 1.2em;
+  margin-top: 28px;
+}
+
+#btnBuscarTodos{
+  border-radius: 5px;
+  margin-top: 15px;
+  background-color: #62b1ff;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+}
+
+#btnBuscarTodos:hover{
+  transition: 0.8s;
+  background-color: #d7dbe3;
+  color: black;
+  transition: 1s;
+}
+
+#modalFade {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  z-index: 5;
+  display: none;
+}
+
+.modal-container {
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: none;
+  z-index: 999;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 40px;
+  background-color: #040414;
+  border-radius: 10px;
+  width: 40%;
+}
+
+.modal-container-excluir {
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: none;
+  z-index: 999;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal-excluir {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 40px;
+  background-color: #040414;
+  border-radius: 10px;
+  width: 35%;
+}
+
+#modal-img{
+  position: relative;
+  left: 46%;
+  cursor: pointer;
+}
+
+#modal-img img{
+  width: 22px;
+}
+
+#modal-img img:hover{
+  transform: scale(1.1);
+}
+
+.modal label {
+  font-size: 18px;
+  width: 100%;
+}
+
+.modal input {
+  width: 100%;
+  outline: none;
+  padding: 5px 10px; 
+  width: 100%;
+  margin-bottom: 20px;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  background-color: #040414;
+  font-size: 16px;
+}
+
+#modal-mensagem-erro{
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: center;
+}
+
+#modal-mensagem-erro span{
+  color: #c10d0d;
+  font-weight: 600;
+  font-size: 17px;
+}
+
+#btnSalvar {
+  width: 100%;
+  margin: 10px auto;
+  outline: none;
+  border-radius: 20px; 
+  padding: 10px 10px; 
+  width: 100%;
+  border: none;
+  background-color: #0a0a35;
+  color: white;
+  font-size: 18px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+#btnSalvar:hover {
+  transition: 0.8s;
+  background-color: #d7dbe3;
+  color: black;
+}
+
+#btnAlterar {
+  width: 100%;
+  margin: 10px auto;
+  outline: none;
+  border-radius: 20px; 
+  padding: 10px 10px; 
+  width: 100%;
+  border: none;
+  background-color: #0a0a35;
+  color: white;
+  font-size: 18px;
+  font-weight: 600;
+  cursor: pointer;
+  display: none;
+}
+
+#btnAlterar:hover {
+  transition: 0.8s;
+  background-color: #d7dbe3;
+  color: black;
+}
+
+#btnExcluir {
+  width: 100%;
+  margin: 40px 0px 0px 0px;
+  outline: none;
+  border-radius: 20px; 
+  padding: 10px 10px; 
+  width: 100%;
+  border: none;
+  background-color: #5e0000;
+  color: white;
+  font-size: 18px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+#btnExcluir:hover {
+  transition: 0.8s;
+  background-color: #d7dbe3;
+  color: black;
+}
+
+.active {
+  display: flex;
+}
+
+.active .modal {
+  animation: modal .4s;
+}
+
+.active .modal-excluir {
+  animation: modal .4s;
+}
+
+.text-vermelho td{
+  color: #b51616;
+}
+
+@keyframes modal {
+  from {
+    opacity: 0;
+    transform: translate3d(0, -60px, 0);
+  }
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+td button {
+  border: none;
+  outline: none;
+  background: transparent;
+}
+
+td button i {
+  font-size: 25px;
+}
+
+td button i:first-child {
+  margin-right: 10px;
+}
+
+@media (max-width: 1000px) {
+    body {
+      font-size: 10px;
+    }
+
+    .header {
+      flex-direction: column;
+    }
+
+    #dv-descricao input{
+        font-size: inherit;
+        margin-top: -3px;
+        width: 300px;
+    }
+
+    #dv-ddlTipoPesquisa select {
+      height: 26px;
+      padding: 3px;
+   }
+
+   #dv-data{
+    margin-bottom: 20px;
+    margin-top: 15px;
+  }
+
+  .dv-data-inputs{
+    margin-left: 15px;
+  }
+
+   .m-data {
+    padding: 3px;
+  }
+
+    #dv-descricao-lupa img {
+      width: 25px;
+    }
+
+    #dv-descricao {
+      margin-top: 19px;
+   }
+
+    .header span {
+      font-size: 12px;
+    }
+
+    #containerImg img {
+      width: 35px;
+      height: 35px;
+    } 
+
+    thead tr th {
+      padding: 3px;
+      text-align: start;
+      font-size: 12px;
+    }
+
+    tbody tr td {
+      padding: 3px;
+      font-size: 12px;
+    }
+
+    thead tr td {
+      font-size: 13px;
+      padding: 3px;
+    }
+
+    .icon-lista {
+      width: 16px;
+    }
+
+    #dvBtnAlmoxarifado{
+      display: flex;
+    }
+
+    #incluir {
+      padding: 5px;
+      font-size: 10px;
+    }
+    
+    #gerarPdf {
+      padding: 5px;
+      font-size: 10px;
+    }
+
+    #btnPesquisar{
+      padding: 5px;
+      font-size: 10px;
+      height: 25px;
+      margin-left: 15px;
+    }
+
+    thead tr th.acao {
+      width: auto!important;
+    }
+    
+    td button i {
+      font-size: 20px!important;
+    }
+
+    td button i:first-child {
+      margin-right: 0;
+    }
+
+    .modal {
+      width: 90%!important;
+    }
+
+    .modal-excluir {
+      width: 80% !important;
+    }
+
+    .modal label {
+      font-size: 12px!important;
+    }
+
+    #modal-img img {
+      width: 17px;
+   }
+
+   #almoxarifado-form-modal-excluir div span{
+     font-size: 1.3em !important;
+   }
+
+   #btnExcluir {
+    font-size: 14px;
+   }
+
+    #th-DataEmissao{
+      min-width: 110px !important;
+    }
+    
+    #th-ferramenta{
+      min-width: 200px !important;
+    }
+    
+    #th-quantidade{
+      min-width: 110px !important;
+    }
+    
+    #th-funcionario{
+      min-width: 180px !important;
+    }
+    
+    #th-dataDevolucao{
+      min-width: 135px !important;
+    }
+    
+    #th-quantidadeDevolvida{
+      min-width: 140px !important;
+    }
+}
+
+@media (max-height: 800px) {
+
+  .divTable{
+    height: 500px;
+  }
+}
+
+@media (max-width: 700px) {
+
+  #tittle-almoxarifado {
+     font-size: 18px;
+     margin-top: 15px;
+  }
+}
