@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BlueCode</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.70/pdfmake.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.70/vfs_fonts.js"></script>
+    <link rel="icon" type="image/x-icon" href="img/icon.png">
+    <link rel="stylesheet" href="Estilo/styleControleAlmoxarifado.css">
+</head>
+
+<body>
+
+    <div id="containerImg">
+        <img onclick="voltar()" src="img/botao-voltar.png " alt="Click aqui para sair">
+
+        <div id="containerImgExit">
+            <span>VOLTAR</span>
+        </div>
+    </div>
+
+    <div id="dvTittleAlmoxarifado">
+        <span id="tittle-almoxarifado">Controle de saída de Ferramentas</span>
+    </div>
+
+    <div id="t-body">
+        <div class="container">
+            <div class="header">
+
+                    <div id="dv-ddlTipoPesquisa">
+                        <select name="select" id="selectPesquisa">
+                            <option selected="selected" disabled="disabled" value="valor">Escolha o Tipo de Pesquisa
+                            </option>
+                            <option value="pesquisaDescricao">Pesquisa Por Descrição</option>
+                            <option value="pesquisaData">Pesquisa Por Data</option>
+                        </select>
+                    </div>
+
+                    <div id="dv-data" class="hidden">
+
+                        <div class="dv-data-inputs">
+                            <label class="labeldata" for="m-dataInicial">Data Inicial</label>
+                            <input class="m-data" id="m-dataInicial" type="date" autocomplete="off">
+                        </div>
+
+                        <div class="dv-data-inputs">
+                            <label class="labeldata" for="m-dataFinal">Data Final</label>
+                            <input class="m-data" id="m-dataFinal" type="date" autocomplete="off">
+                        </div>
+
+                        <input id="btnPesquisar" type="submit" value="Pesquisar" onclick="filtrarPorData();">
+                    </div>
+
+                    <div id="dv-descricao">
+
+                        <div id="dv-descricao-pesquisa">
+                            <input id="m-descricao" type="text" autocomplete="off">
+
+                            <div id="dv-descricao-lupa">
+                                <img src="img/lupa.png" title="Pesquisar">
+                            </div>
+                        </div>
+
+                    </div>
+
+                <div id="dvBtnAlmoxarifado">
+                    <button onclick="gerarPDF()" id="gerarPdf">Gerar PDF</button>
+                    <button onclick="openModal()" id="incluir">Incluir</button>
+                </div>
+
+            </div>
+
+            <div class="divTable">
+                <table>
+                    <thead>
+                        <tr>
+                            <th id="th-DataEmissao" style="min-width: 170px;">Data Emissão</th>
+                            <th id="th-cliente" style="min-width: 300px;">Cliente</th>
+                            <th id="th-ferramenta" style="min-width: 300px;">Ferramenta</th>
+                            <th id="th-quantidade" style="min-width: 160px;">Quantidade</th>
+                            <th id="th-funcionario" style="min-width: 220px;">Funcionário</th>
+                            <th id="th-dataDevolucao" style="min-width: 200px;">Data Devolução</th>
+                            <th id="th-quantidadeDevolvida" style="min-width: 200px">Quant. Devolvida</th>
+                            <td align="center">Opções</td>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    </tbody>
+                </table>
+                <div id="dvNenhumRegistroEncontrado">
+                    <img id="imgNenhumRegistroEncontrado" src="img/nao-encontrado.png">
+                    <span id="lbNenhumRegistroEncontrado">Ops, Nenhum Registro Encontrado!</span>
+                    <input id="btnBuscarTodos" type="button" value="Buscar Todos" onclick="buscarTodosListaAlmoxarifado();">
+                </div>
+            </div>
+
+            <div id="modalFade"></div>
+
+            <div class="modal-container">
+                <div class="modal">
+
+                    <div id="modal-img" onclick="closeModal()">
+                        <img src="img/fechar.png" alt="Click aqui para fechar" title="Fechar">
+                    </div>
+
+                    <form id="almoxarifado-form-modal">
+                        <label for="f-data">Data</label>
+                        <input id="m-data" type="text" required="required" autocomplete="off">
+
+                        <label id="m-cliente-label-modal" for="f-cliente">Cliente</label>
+                        <input id="m-cliente" type="text" autocomplete="off">
+
+                        <label id="l-ferramenta" for="f-ferramenta">Ferramenta</label>
+                        <input id="m-ferramenta" type="text" required="required" autocomplete="off">
+
+                        <label for="m-quantidade">Quantidade</label>
+                        <input id="m-quantidade" type="number" required="required" autocomplete="off">
+
+                        <label for="m-funcionário">Funcionário</label>
+                        <input id="m-funcionário" type="text" required="required" autocomplete="off">
+
+                        <label for="m-dataDevolucao">Data Devolução</label>
+                        <input id="m-dataDevolucao" type="text" autocomplete="off">
+
+                        <label for="m-quantidadeDevolvida">Quantidade Devolvida</label>
+                        <input id="m-quantidadeDevolvida" type="number" autocomplete="off">
+
+                        <div id="dv-modal-mensagem-erro" style="display: none;">
+                            <div id="modal-mensagem-erro">
+                                <span id="m-modal-mensagem-erro"></span>
+                            </div>
+                        </div>
+
+                        <input id="btnSalvar" type="submit" value="Salvar">
+
+                        <input id="btnAlterar" type="submit" value="Alterar">
+                    </form>
+                </div>
+            </div>
+
+            <div class="modal-container-excluir">
+                <div class="modal-excluir">
+
+                    <div id="modal-img" onclick="closeModal()">
+                        <img src="img/fechar.png" alt="Click aqui para fechar" title="Fechar">
+                    </div>
+
+                    <form id="almoxarifado-form-modal-excluir">
+                        <div style="margin-top: 25px;">
+                            <span style="font-size: 1.6em">Tem certeza que deseja excluir este registro ?</span>
+                        </div>
+
+                        <input onclick="excluirItem();" id="btnExcluir" type="submit" value="Excluir">
+                    </form>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>

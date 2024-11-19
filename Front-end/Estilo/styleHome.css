@@ -1,0 +1,232 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Montserrat", sans-serif;
+}
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #02060e;
+}
+
+#boxImg{
+    margin: 20px 0px 0px 18px;
+    display: flex;
+    width: 5%;   
+}
+
+#boxImg img{
+    width: 52px;
+    height: 52px;
+    cursor: pointer;
+}
+
+#boxLbPerfil{
+    margin: 16px 0px 0px 12px;
+}
+
+#boxLbPerfil span{
+    visibility: collapse;
+    color: white;
+    font-size: 17px;
+    opacity: 0;
+    transition: opacity 1s;
+}
+
+#boxImg:hover #boxLbPerfil span{
+    visibility: visible;
+    opacity: 1;
+}
+
+.boxModalPerfil-hidden{
+    opacity: 0;
+    overflow: hidden;
+    position: absolute;
+    z-index: 100;
+}
+
+.boxModalPerfil-show{
+    display: flex;
+    flex-direction: column;
+    margin: 10px 0px 0px 20px;
+    border: 1px solid #ffffff38;
+    border-radius: 5px;
+    width: 135px;
+    padding: 10px;
+    position: absolute;
+    z-index: 100;
+    opacity: 1;
+    overflow: visible;
+    transition: opacity 1.5s ease, transform 1.5s ease;
+}
+
+#boxAlterarSenha{
+    color: white;
+    cursor: pointer;
+}
+
+#boxSair{
+    color: white;
+    margin-top: 10px;
+    cursor: pointer;
+}
+
+#boxAlterarSenha:hover, #boxSair:hover{
+    text-decoration: underline;
+    transition: 3s;
+}
+
+#boxWolcome{
+    transition: opacity 1s ease-out, visibility 1s ease-out;
+    opacity: 1;
+    visibility: visible;
+    max-width: 75%;
+}
+
+#span-wolcome{
+    color: white;
+    font-size: 3em;
+    opacity: 0;
+    animation: fadeIn 2s forwards;
+}
+
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+    }
+}
+
+#boxPanels{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    display: none;
+}
+
+#boxMessageChoose{
+    display: flex;
+    justify-content: center;
+    margin-top: 60px;
+}
+
+#span-boxMessageChoose{
+    color: white;
+    font-size: 2em;
+    max-width: 85%;
+}
+
+#NextboxPanels{
+    display: flex;
+    position: relative;
+    font-weight: bold;
+    justify-content: center;
+    top: 7%;
+}
+
+#NextboxPanels .ClassPainels{
+    margin: 50px;
+    width: 480px;
+    height: 410px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    border: solid 1px white;
+    text-transform:uppercase;
+    letter-spacing: 5px;
+    cursor: pointer;
+    transition: 0.6s;
+    font-weight: bold;
+    border-radius: 17px;
+}
+
+#NextboxPanels .ClassPainels:hover{
+    transform: scale(1.1);
+    border-color: #7fff73;
+}
+
+#NextboxPanels .ClassPainels img{
+    width: 300px;
+    height: 290px;
+}
+
+#NextboxPanels .ClassPainels span{
+    padding: 15px 30px 15px 35px;
+    color: white;
+}
+
+#ferramenta{
+    text-decoration: underline;
+}
+
+@media (max-width: 700px) {
+
+    .boxModalPerfil-show{
+        background-color: #02060e;
+    }
+
+    #NextboxPanels{
+        flex-direction: column;
+        top: 0%;
+    }
+
+    #boxImg img {
+        width: 45px;
+        height: 40px;
+    }
+
+    #NextboxPanels .ClassPainels {
+        height: 315px;
+    }
+
+    #NextboxPanels .ClassPainels span {
+        font-size: 0.9em;
+    }
+
+    #NextboxPanels .ClassPainels{
+       max-width: 80%;
+       height: 330px;
+       margin-top: 25px;
+    }
+
+    #dvPainel-saidaMateriais{
+        margin-top: 0px !important;
+    }
+
+    #NextboxPanels .ClassPainels img {
+        width: 200px;
+        height: 190px;
+    }
+
+    #span-wolcome {
+       font-size: 2em;
+    }
+
+    #boxMessageChoose{
+       margin-top: 25px; 
+       align-items: center;
+       display: flex;
+       justify-content: center;
+    }
+
+    #span-boxMessageChoose{
+       font-size: 1.5em;
+    }
+    
+    #span-wolcome{
+       font-size: 1.2em;
+    }
+}
+  
+  

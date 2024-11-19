@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BlueCode</title>
+    <link rel="icon" type="image/x-icon" href="img/icon.png">
+    <link rel="stylesheet" href="Estilo/styleHome.css">
+</head>
+
+<body>
+    
+    <div style="display: none">
+        <input id="usuarioLogado" type="checkbox">
+    </div>
+    
+    <div id="boxWolcome">
+        <span id="span-wolcome"></span>
+    </div>
+
+    <div id="boxPanels">
+        
+        <div id="boxImg">
+            <img onclick="exibeModalPerfil();" src="img/perfil.png" alt="Perfil">
+            
+            <div id="boxLbPerfil">
+                <span>PERFIL</span>
+            </div>
+        </div>
+
+        <div id="boxModalPerfil" class="boxModalPerfil-hidden">
+            <span onclick="telaAlterarSenha();" id="boxAlterarSenha">Alterar senha</span>
+            <span onclick="sair()" id="boxSair">Sair</span>
+        </div>
+        
+        <div id="boxMessageChoose">
+            <span id="span-boxMessageChoose"></span>
+        </div>
+        
+        <div id="NextboxPanels">
+
+            <div onclick="telaControleAlmoxarifado(true)" class="ClassPainels">
+                <span>Controle de saída de Ferramentas (Almoxarifado)</span>
+                <img src="img/lista-de-controle.gif">
+            </div>
+
+            <div id="dvPainel-saidaMateriais" onclick="telaControleAlmoxarifado(false)" class="ClassPainels">
+                <span>Controle de saída de Materiais (Almoxarifado)</span>
+                <img src="img/lista-de-controle.gif">
+            </div>
+
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

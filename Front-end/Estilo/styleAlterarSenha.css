@@ -1,0 +1,161 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Montserrat', sans-serif;
+  color: white;
+}
+
+body {
+  background-color: #02060e;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+
+#form-alterarSenha-container img{
+    width: 120px;
+    margin-left: 165px;
+    margin-bottom: 70px;
+}
+
+#form-alterarSenha-container{
+    width: 450px;
+    margin-bottom: 100px;
+    margin-right: 220px;
+}
+
+.senha{
+    outline: none;
+    padding: 5px 10px;
+    width: 100%;
+    margin-bottom: 20px;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    background-color: transparent;
+    font-size: 16px;
+}
+
+#boxIsValid{
+    position: relative;
+    margin-left: 115px;
+    display: none;
+}
+
+#boxIsValid #spanIsValid{
+    color: #c10d0d;
+    font-weight: 600;
+}
+
+#btnSalvar {
+    width: 100%;
+    font-size: 18px;
+    padding: 6px;
+    border-radius: 5px;
+    border: none;
+    color: white;
+    background-color: #404040;
+    cursor: pointer;
+    height: 40px;
+    margin-top: 15px;
+    transition: 1s;
+  }
+  
+  #btnSalvar:hover {
+    transition: 0.8s;
+    background-color: #1b913e;
+    transition: 1s;
+  }
+
+  #btnCancelar {
+    width: 100%;
+    font-size: 18px;
+    padding: 6px;
+    border-radius: 5px;
+    border: none;
+    color: white;
+    background-color: #404040;
+    cursor: pointer;
+    height: 40px;
+    margin-top: 15px;
+    transition: 1s;
+  }
+  
+  #btnCancelar:hover {
+    transition: 0.8s;
+    background-color: #b51616;
+    transition: 1s;
+  }
+
+  /* Estilos do ícone de check */
+.check-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#check-icon {
+  width: 140px;
+  height: 140px;
+  display: block;
+  stroke-width: 5;
+  stroke: #4CAF50; /* Cor verde */
+  stroke-linecap: round;
+  overflow: visible;
+}
+
+.check-circle {
+  stroke-dasharray: 157;
+  stroke-dashoffset: 157;
+  transition: stroke-dashoffset 1s ease-out;
+}
+
+.check-mark {
+  stroke-dasharray: 36;
+  stroke-dashoffset: 36;
+  transition: stroke-dashoffset 0.5s ease-out 0.5s;
+}
+
+/* Classe para animar o preenchimento */
+.check.animate .check-circle {
+  stroke-dashoffset: 0;
+}
+
+.check.animate .check-mark {
+  stroke-dashoffset: 0;
+}
+
+/* Estilos para a mensagem de sucesso */
+.success-message {
+  opacity: 0;
+  font-size: 20px;
+  color: #4CAF50;
+  margin-top: 14px;
+  transition: opacity 0.5s ease-out;
+}
+
+/* Classe para exibir a mensagem */
+.success-message.show {
+  opacity: 1;
+}
+
+  @media (max-width: 700px) {
+
+    #form-alterarSenha-container img{
+        width: 100px;
+        margin-left: 123px;
+    }
+
+    #form-alterarSenha-container form{
+        width: 330px;
+    }
+    
+    #form-alterarSenha-container{
+      margin-right: 165px;
+    }
+  }

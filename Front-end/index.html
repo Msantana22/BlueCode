@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BlueCode</title>
+    <link rel="icon" type="image/x-icon" href="img/icon.png">
+    <link rel="stylesheet" href="Estilo/style.css">
+</head>
+<body>
+    <div id="BoxLoad">
+        <img src="img/BlueCode.png">
+    </div>
+
+    <div id="box">
+        <form id="login-form">
+            <h2>Login</h2>
+            <div class="inputBox">
+                <input id="usuario" type="text" required="required" autocomplete="off">
+                <span>Usuário</span>
+                <i></i>
+            </div>
+            <div class="inputBox">
+                <input id="senha" type="password" required="required">
+                <span>Senha</span>
+                <i></i>
+            </div>
+            <div id="boxIsValid">
+                <span id="spanIsValid">Ops, Usuário ou Senha invalido !</span>
+            </div>
+            <input id="btn-entrar" type="submit" value="Entrar"> 
+        </form>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
