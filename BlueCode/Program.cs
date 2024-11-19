@@ -20,8 +20,14 @@ builder.Services.AddCors(options =>
         });
 });
 
+var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
 builder.Services.AddDbContext<AppDbContext>(options =>
-    options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
+    options.UseSqlServer(connectionString));
+
+if (string.IsNullOrEmpty(connectionString))
+{
+    throw new ArgumentNullException(nameof(connectionString), "Connection string not found.");
+}
 
 //builder.Services.AddControllers()
 //    .AddJsonOptions(options =>
